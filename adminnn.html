@@ -1,0 +1,206 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- styling -->
+    <link rel = "stylesheet" href = "style.css">
+
+    <!-- font -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+
+    <!-- icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- chart-->
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <title>Responsive Admin Dashboard</title>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class = "navbar">
+        <div class = "nav-left">
+            <i class = "menu-btn fas fa-bars"></i>
+            <h2 class = "logo">Admin Dashboard</h2>
+        </div>
+        <div class = "nav-right">
+            <div class = "search">
+                <i class = "fas fa-search"></i>
+                <input type = "text" placeholder = "search....">
+            </div>
+            <div class = "notifications">
+                <i class = "fas fa-bell"></i>
+            </div>
+            <div class = "dark-mode">
+                <img src = "sun.jpg" id = "icon">
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <!-- sidebar -->
+        <div class="sidebar">
+            <div class="profile">
+                <button class = "profile-btn" onclick="pfp()">
+                <img class = "profile-image" src = "logo3.jpg">
+                </button>
+                <h3>The Global Gateway</h3>
+               
+            </div>
+            <div class = "menu">
+                <div class = "menu-detail menu-active">
+                    <a href = "#">
+                        <i class = "fas fa-chart-pie menu-icon"></i> <span>Vacancies</span>
+                    </a>
+                </div>
+                <div class = "menu-detail">
+                    <a href = "#">
+                        <i class = "fas fa-user-secret menu-icon"></i> <span>Employee Portal</span>
+                    </a>
+                </div>
+                <div class = "menu-detail">
+                    <a href = "#">
+                        <i class = "fas fa-headset menu-icon"></i> <span>Support Center</span>
+                    </a>
+                </div>
+                <div class = "menu-detail">
+                    <a href = "#">
+                        </i> <span>Security</span>
+                    </a>
+                </div>
+                <div class = "menu-detail">
+                    <a href = "#">
+                        <i class = "fas fa-cog menu-icon"></i> <span>Settings</span>
+                    </a>
+                </div>
+                <div class = "menu-detail">
+                    <a href = "#">
+                        <button class="btn-log" onclick="location.href='file:///E:/VS%20Code/project/login.html'">
+                        <i class = "fas fa-sign-out-alt menu-icon"></i> <span>Sign Out</span>
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!--main content-->
+        <div class = "main-container">
+            <!--left-->
+            <div class = "left-container">
+                <div class = "wrapper">
+                    <div class = "card-wrapper">
+                        <div class = "card">
+                            <h1 class = "count">20</h1>
+                            <h1 class="count">Software Engineer</h1>
+                            <div class = "dropdown">
+                            </div>
+                        </div>
+                        <div class = "card">
+                            <h1 class = "count">15</h1>
+                            <h1 class="count">Project Manager</h1>
+                            <div class = "dropdown"></div>
+                        </div>
+                    </div>
+                    <div class = "card-wrapper">
+                        <div class = "card">
+                            <h1 class = "count">30</h1>
+                            <h1 class="count">Data Analyst</h1>
+                            <div class = "dropdown">
+                            </div>
+                        </div>
+                        <div class = "card">
+                            <h1 class = "count">65</h1>
+                            <h1 class = "count">Total Vacancies</h1>
+                            <div class = "dropdown">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class = "wrapper">
+                    <div class="card">
+                        <div class = "title-wrapper">
+                            <h3 class = "title">Vacancy Graph</h3>
+                        </div>
+                        <div class = "chart-container">
+                            <div id = "chLine"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--right-->
+            <div class = "right-container">
+                <div class = "card">
+                    <h3 class = "title">Summary</h3>
+                    <div id = "dougnut-chart"></div>
+
+                    <div class = "chart-detail">
+                        <div class = "detail-wrapper">
+                            <i class = "fas fa-theater-masks"></i>
+                            <p>Software Engineer</p>
+                            <h3 class = "detail-num">20 <span class = "up-down green"> +64%</span></h3>
+                        </div>
+                        <hr class = "divider">
+                        <div class = "detail-wrapper">
+                            <i class = "fas fa-user-friends"></i>
+                            <p>Project Manager</p>
+                            <h3 class = "detail-num">15 <span class = "up-down green"> -29% </span></h3>
+                        </div>
+                        <hr class = "divider">
+                        <div class = "detail-wrapper">
+                            <i class = "fas fa-shapes"></i>
+                            <p>Data Analyst</p>
+                            <h3 class = "detail-num">30 <span class = "up-down green"> +13% </span></h3>
+                        </div>
+                        <hr class = "divider">
+                        <div class = "detail-wrapper">
+                            <i class = "fas fa-shapes"></i>
+                            <p>Total Vacancies</p>
+                            <h3 class = "detail-num">65 <span class = "up-down green"> +7% </span></h3>
+                        </div>
+                        <hr class = "divider">
+                    </div>
+                </div>
+            </div>
+
+            <!--bottom-->
+            <div class="bottom-container">
+                <div class = "card">
+                    <h3 class="title">Employee Portal</h3>
+                    <div id="teams">
+                        <p class="team-name" onclick="showTeamMembers('Development')">Development Team</p>
+                        <p class="team-name" onclick="showTeamMembers('Design')">Design Team</p>
+                        <p class="team-name" onclick="showTeamMembers('Marketing')">Marketing Team</p>
+                    </div>
+                      <table id="employeeTable" style="display:none;">
+                        <thead>
+                          <tr>
+                            <th>Name</th>
+                            <th>Days Worked</th>
+                            <th>Leaves Taken</th>
+                            <th>Salary</th>
+                          </tr>
+                        </thead>
+                        <tbody id="employeeData"></tbody>
+                      </table> 
+                     
+                </div>
+            </div>
+        </div>
+    </div>
+<script>
+
+    function pfp(){
+        window.open("file:///E:/VS%20Code/project/profile.html");
+    }
+
+    var icon = document.getElementById("icon");
+
+    icon.onclick = function(){
+        document.body.classList.toggle("light-theme");
+        if(document.body.classList.contains("light-theme")){
+            icon.src = "moon.jpg";
+        }else{
+            icon.src = "sun.jpg";
+        }
+    }
+</script>
+</body>
+<script src = "https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script src = "app.js"></script>
+</html>
