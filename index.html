@@ -8,15 +8,17 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
-    </head> 
+    </head>
+    
     <style>
+
     html, body {
         margin: 0;
-        padding: 0;
+        padding: 0px;
         box-sizing: border-box;
-        background-image: url("bg.webp");
-        background-size: cover;
-        background-repeat: no-repeat;
+        background-image: url("login.jpg");
+        background-size: cover;      
+        z-index: 1;
     }
 
     header {
@@ -24,10 +26,12 @@
         height: 9.2vw;
         display: flex;
         align-items: center;
-        background: -webkit-linear-gradient(to right, #4CA1AF, #2C3E50); /* Chrome 10-25, Safari 5.1-6 */
-        background: linear-gradient(to right, #4CA1AF, #2C3E50); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        background: #000000;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #434343, #000000);  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #434343, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
         position: relative;
         padding: 0;
+        z-index: 0;
     }
 
    
